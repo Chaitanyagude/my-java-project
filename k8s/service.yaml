@@ -7,7 +7,7 @@ spec:
     app: my-java-project
   ports:
     - protocol: TCP
-      port: 8083
-      targetPort: 8083
+      port: 8082
+      targetPort: 8082
       nodePort: 32551
   type: NodePort

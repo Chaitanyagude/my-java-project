@@ -16,4 +16,4 @@ spec:
       - name: my-java-project
         image: chaitug/my-java-project:latest
         ports:
-        - containerPort: 8083
+        - containerPort: 8082
