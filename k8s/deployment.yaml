@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-java-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-java-project
+  template:
+    metadata:
+      labels:
+        app: my-java-project
+    spec:
+      containers:
+      - name: my-java-project
+        image: chaitug/my-java-project:latest
+        ports:
+        - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-java-project-service
+spec:
+  selector:
+    app: my-java-project
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8083
+  type: NodePort
